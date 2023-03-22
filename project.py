@@ -31,15 +31,16 @@ def have_breakfast():
     print('Have breakfast (avod oil food)')
 
 def do_excercise():
-    print('Go for a walk or Jogging for 30 to 40 minutes')
+    print('Go for a walk  for 30 to 40 minutes')
 
 def meditate_yourself():
     print('Meditate 10 to 15 minutes every day')
     
 def wake_up_early_morning():
-    print("It's time to wake up")
+    print("Wake up at 6\'O clock daily")
 
 def life_style_suggested_by_doctror(morning_tablets, afternoon_tablets, night_tablet):
+    print('=> Please follow the precautions given by the doctor')
     wake_up_early_morning()
     meditate_yourself()
     do_excercise()
@@ -68,19 +69,25 @@ def consult_a_doctor():
 def check_she_is_suffering_from_hyperglicamia(FBS, PLBS):
     if FBS >140 or PLBS > 190:
         return True
+    return False    
  
 
 person_name = 'Sunitha Sharma'
 age = 65
-suffering_from = 'Hyperglycaemia (High blood Sugar)'
+
+print('Please Enter the Blood sugar levels before the Breakfast')
 FBS = int(input())  #before break fast 
+print('Please Enter the Blood sugar levels After the Breakfast')
 PLBS = int(input()) # after food
-last_month_consult_doctor = input()
+
 
 is_suffering_from_hyperglicamia = check_she_is_suffering_from_hyperglicamia(FBS, PLBS)
 if is_suffering_from_hyperglicamia :
+    suffering_from = 'Hyperglycaemia (High blood Sugar)'
     print('Sunitha Sharma is suffering_from {}'.format(suffering_from))
-    if  last_month_consult_doctor == 'False':
+    print('Have you consulted the doctor within the last one month or not?')
+    last_month_consult_doctor = input()
+    if  last_month_consult_doctor in ('NO' , 'No', 'no' , 'nO') and is_suffering_from_hyperglicamia == True:
         print('Consult a Doctor as soon as possible')
         
     consult_a_doctor()
